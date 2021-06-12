@@ -7,14 +7,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public CameraController cameraController;
+
     public float moveSpeed = 5;
     public float turnSpeed = 5;
     public float jumpPower = 1;
     public float gravity = -9.81f;
     public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode interactKey = KeyCode.Mouse0;
 
     private CharacterController characterController;
-    
     private Vector3 moveDirection;
     private float verticalVelocity;
 
@@ -74,8 +75,33 @@ public class PlayerController : MonoBehaviour
         this.transform.rotation = Quaternion.Slerp(this.transform.rotation, newRotation, turnSpeed * Time.deltaTime);
     }
 
+    private void AttachItem(GameObject newItem)
+    {
+        AttachableSlot[] slots = transform.GetComponentsInChildren<AttachableSlot>();
+
+        foreach (AttachableSlot slot in slots)
+        {
+            if (slot.CanAttach(newItem))
+                slot.Attach(newItem);
+        }
+    }
+
+    private void IncreaseScale(Vector3 addedScale)
+    {
+        transform.localScale += addedScale;
+    }
+
     private void Update()
     {
         Move();
+
+        if (Input.GetKeyDown(interactKey))
+        {
+            Ray ray = new Ray(transform.position + characterController.center, transform.forward);
+            if (Physics.SphereCast(ray, characterController.radius, out RaycastHit hitInfo, characterController.radius))
+            {
+                AttachItem(hitInfo.transform.gameObject);
+            }
+        }
     }
 }
