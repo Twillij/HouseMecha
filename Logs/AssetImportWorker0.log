@@ -74,3 +74,168 @@ Received Import Request.
 Start importing Assets/Suburban Structure Kit/Materials/FineWood1.mat using Guid(788c7c9997729c445af25299666d0966) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bd7f38bc5b2ac9fe5343703e8a6c44d') in 0.202758 seconds
   Import took 0.206660 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 12743.626717 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(2f870daabb678af47b18d6588b52bb2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(2f870daabb678af47b18d6588b52bb2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd57318d3ebdff91a842e224a4f6e8213') in 0.012911 seconds
+  Import took 0.037780 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.440445 seconds.
+  path: Assets/Imports
+  artifactKey: Guid(c84ee466c845fb441bf5169da3e9c66f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports using Guid(c84ee466c845fb441bf5169da3e9c66f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a43bc3b23eceff7d1e3b98702b42123') in 0.011242 seconds
+  Import took 0.018606 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 183.655694 seconds.
+  path: Assets/Imports/Smart TV UE65MU6400 Series 6.fbx
+  artifactKey: Guid(c17b545822218594e9e6c1f22a69fba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Smart TV UE65MU6400 Series 6.fbx using Guid(c17b545822218594e9e6c1f22a69fba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c4ad13cb172037e5cbd9a905ef145f1') in 0.206773 seconds
+  Import took 0.210667 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 103.150998 seconds.
+  path: Assets/Smart TV UE65MU6400 Series 6.fbx
+  artifactKey: Guid(be595d11ca5b5b44fb6a92f18fe7f4af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Smart TV UE65MU6400 Series 6.fbx using Guid(be595d11ca5b5b44fb6a92f18fe7f4af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28cd8b35514aa3d29a5ba1439006934e') in 0.042529 seconds
+  Import took 0.046349 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 77.542259 seconds.
+  path: Assets/Imports/Screen.mat
+  artifactKey: Guid(15925b3e1399a2c40b19e3bf28850da3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Screen.mat using Guid(15925b3e1399a2c40b19e3bf28850da3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f051765d5457cf60ffffcd413d6c7c0') in 0.027485 seconds
+  Import took 0.030945 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 126.085512 seconds.
+  path: Assets/Imports/TV Stand.blend
+  artifactKey: Guid(472d7e78cb6d5084b82227315a0ce45c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/TV Stand.blend using Guid(472d7e78cb6d5084b82227315a0ce45c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80f8cb63f6d72d9748d8e3c6b3aea1ab') in 0.076204 seconds
+  Import took 0.082209 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.914511 seconds.
+  path: Assets/Imports/TV Stand_Texture.jpeg
+  artifactKey: Guid(b4971fe974982a84ba7949507137ebdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/TV Stand_Texture.jpeg using Guid(b4971fe974982a84ba7949507137ebdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bbe00ca54c3ea5b3a85d4c16e77395f') in 0.119750 seconds
+  Import took 0.123102 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 102.406862 seconds.
+  path: Assets/Imports/TV Stand_Texture 1.jpeg
+  artifactKey: Guid(29b3aea960ac28648981096974bdb412) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/TV Stand_Texture 1.jpeg using Guid(29b3aea960ac28648981096974bdb412) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '123420fd1ad78875dc4e5f19d146ec92') in 0.017993 seconds
+  Import took 0.021708 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Imports/TV Stand 1.blend
+  artifactKey: Guid(27d214ed86ca6cf479bf564dc4316798) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/TV Stand 1.blend using Guid(27d214ed86ca6cf479bf564dc4316798) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5aef805caaa74331c47e56d8c99d6d5') in 0.038062 seconds
+  Import took 0.041934 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Imports/TV Stand.blend
+  artifactKey: Guid(472d7e78cb6d5084b82227315a0ce45c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/TV Stand.blend using Guid(472d7e78cb6d5084b82227315a0ce45c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '525cb56cdc194baa82d93f0d40d5852e') in 0.037891 seconds
+  Import took 0.041117 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 57.562286 seconds.
+  path: Assets/Imports/TV Stand.blend
+  artifactKey: Guid(472d7e78cb6d5084b82227315a0ce45c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/TV Stand.blend using Guid(472d7e78cb6d5084b82227315a0ce45c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8e7dade00b39cb679357c5cb5c13f3a') in 0.033146 seconds
+  Import took 0.038062 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000307 seconds.
+  path: Assets/Imports/TV Stand.fbx
+  artifactKey: Guid(723a86d23273301498f2aac4c3134956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/TV Stand.fbx using Guid(723a86d23273301498f2aac4c3134956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7748b1a908b316bf5f9265afbfca54e1') in 0.022361 seconds
+  Import took 0.025653 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.324308 seconds.
+  path: Assets/Imports/TV Stand.blend1
+  artifactKey: Guid(c221082fcc96ede4792853237347280d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/TV Stand.blend1 using Guid(c221082fcc96ede4792853237347280d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c51ef2846f1418fde5135d555069a1ef') in 0.006603 seconds
+  Import took 0.010365 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 80.060654 seconds.
+  path: Assets/Imports/TV Stand 1.fbx
+  artifactKey: Guid(26bf0f575bf865e48a8b078f568acbda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/TV Stand 1.fbx using Guid(26bf0f575bf865e48a8b078f568acbda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '162dd261953f174603594d81745c964f') in 0.023826 seconds
+  Import took 0.027622 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008117 seconds.
+  path: Assets/Imports/TV Stand 1.fbx
+  artifactKey: Guid(26bf0f575bf865e48a8b078f568acbda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/TV Stand 1.fbx using Guid(26bf0f575bf865e48a8b078f568acbda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '162dd261953f174603594d81745c964f') in 0.023511 seconds
+  Import took 0.027120 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Imports/TV Stand.fbx
+  artifactKey: Guid(723a86d23273301498f2aac4c3134956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/TV Stand.fbx using Guid(723a86d23273301498f2aac4c3134956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef9a7b8d2187cd88cbcff750181f026d') in 0.023113 seconds
+  Import took 0.026585 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004245 seconds.
+  path: Assets/Imports/TV Stand.fbx
+  artifactKey: Guid(723a86d23273301498f2aac4c3134956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/TV Stand.fbx using Guid(723a86d23273301498f2aac4c3134956) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef9a7b8d2187cd88cbcff750181f026d') in 0.020695 seconds
+  Import took 0.024396 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 273.758778 seconds.
+  path: Assets/Imports/Screen.mat
+  artifactKey: Guid(15925b3e1399a2c40b19e3bf28850da3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imports/Screen.mat using Guid(15925b3e1399a2c40b19e3bf28850da3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a1588f7139203da4048d3e3361d5471') in 0.018686 seconds
+  Import took 0.023806 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008704 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.41 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.593 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.38 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1380 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 69.4 MB.
+System memory in use after: 69.5 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1871.
+Total: 2.669200 ms (FindLiveObjects: 0.239900 ms CreateObjectMapping: 0.066700 ms MarkObjects: 2.340000 ms  DeleteObjects: 0.021100 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
