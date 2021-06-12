@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     public float sensitivityX = 1000;
     public float sensitivityY = 500;
     public float minAngleY = -60;
-    public float maxAngleY = 30;
+    public float maxAngleY = 60;
 
     public Transform target;
     public Vector3 orbitRadius;
@@ -56,6 +56,6 @@ public class CameraController : MonoBehaviour
         this.transform.position = target.position + rotation * orbitRadius;
 
         // rotate the camera to refocus
-        this.transform.rotation =   Quaternion.Lerp(transform.rotation, rotation, 1);
+        this.transform.rotation = rotation;
     }
 }
