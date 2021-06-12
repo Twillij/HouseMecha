@@ -6,10 +6,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public CameraController cameraController;
+
     public float moveSpeed = 5;
+    public float turnSpeed = 5;
     public float jumpPower = 1;
     public float gravity = -9.81f;
     public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode interactKey = KeyCode.Mouse0;
 
     private CharacterController characterController;
     private Vector3 moveDirection;
@@ -36,6 +40,11 @@ public class PlayerController : MonoBehaviour
 
             // get the local move direction vector
             moveDirection = new Vector3(horizontal, 0.0f, vertical);
+            
+            if (moveDirection.magnitude > 0.0f)
+            {
+                Turn();
+            }
 
             // transform the local direction into world space
             moveDirection = transform.TransformDirection(moveDirection);
@@ -59,11 +68,40 @@ public class PlayerController : MonoBehaviour
 
     private void Turn()
     {
+        // set the player's y-rotation to be the same as the camera's
+        Quaternion newRotation = Quaternion.Euler(this.transform.rotation.x, cameraController.transform.eulerAngles.y, this.transform.rotation.z);
+
+        // execute the rotation smoothly
+        this.transform.rotation = Quaternion.Slerp(this.transform.rotation, newRotation, turnSpeed * Time.deltaTime);
+    }
+
+    private void AttachItem(GameObject newItem)
+    {
+        AttachableSlot[] slots = transform.GetComponentsInChildren<AttachableSlot>();
+
+        foreach (AttachableSlot slot in slots)
+        {
+            if (slot.CanAttach(newItem))
+                slot.Attach(newItem);
+        }
+    }
+
+    private void IncreaseScale(Vector3 addedScale)
+    {
+        transform.localScale += addedScale;
     }
 
     private void Update()
     {
         Move();
-        Turn();
+
+        if (Input.GetKeyDown(interactKey))
+        {
+            Ray ray = new Ray(transform.position + characterController.center, transform.forward);
+            if (Physics.SphereCast(ray, characterController.radius, out RaycastHit hitInfo, characterController.radius))
+            {
+                AttachItem(hitInfo.transform.gameObject);
+            }
+        }
     }
 }
