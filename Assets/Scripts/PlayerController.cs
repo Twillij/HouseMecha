@@ -45,12 +45,12 @@ public class PlayerController : MonoBehaviour
             
             if (moveDirection.magnitude > 0.0f)
             {
-                //animator.SetBool("isWalking", true);
+                animator.SetBool("IsWalking", true);
                 Turn();
             }
             else
             {
-                //animator.SetBool("isWalking", false);
+                animator.SetBool("IsWalking", false);
             }
 
             // transform the local direction into world space
@@ -75,11 +75,17 @@ public class PlayerController : MonoBehaviour
 
     private void Turn()
     {
-        // set the player's y-rotation to be the same as the camera's
-        Quaternion newRotation = Quaternion.Euler(this.transform.rotation.x, cameraController.transform.eulerAngles.y, this.transform.rotation.z);
+        //// set the player's y-rotation to be the same as the camera's
+        //Quaternion newRotation = Quaternion.Euler(this.transform.rotation.x, cameraController.transform.eulerAngles.y, this.transform.rotation.z);
 
-        // execute the rotation smoothly
-        this.transform.rotation = newRotation;// Quaternion.Slerp(this.transform.rotation, newRotation, turnSpeed * Time.deltaTime);
+        //// execute the rotation smoothly
+        //this.transform.rotation = Quaternion.Slerp(this.transform.rotation, newRotation, turnSpeed * Time.deltaTime);
+
+        Vector3 cameraDirection = new Vector3(cameraController.transform.forward.x, 0.0f, cameraController.transform.forward.z);
+
+        Quaternion newRotation = Quaternion.LookRotation(cameraDirection, Vector3.up);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, turnSpeed * Time.deltaTime); 
     }
 
     private void AttachItem(GameObject newItem)

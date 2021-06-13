@@ -45,17 +45,14 @@ public class CameraController : MonoBehaviour
         angleX += Input.GetAxis("Mouse X") * sensitivityX * Time.deltaTime;
         angleY -= Input.GetAxis("Mouse Y") * sensitivityY * Time.deltaTime;
         angleY = Mathf.Clamp(angleY, minAngleY, maxAngleY);
-    }
 
-    private void FixedUpdate()
-    {
         // set the quaternion rotation
-        Quaternion rotation = Quaternion.Euler(new Vector3(angleY, angleX, 0) );
+        Quaternion rotation = Quaternion.Euler(new Vector3(angleY, angleX, 0));
 
         // set the camera's position relative to the target
-        this.transform.position = target.position + rotation * orbitRadius;
+        transform.position = target.position + rotation * orbitRadius;
 
         // rotate the camera to refocus
-        this.transform.rotation = rotation;
+        transform.rotation = rotation;
     }
 }
