@@ -4,21 +4,37 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public float scaleRequirement = 1;
+    public PlayerController player;
+    public Vector3 scaleRequirement;
+
     public List<GameObject> itemPrefabs = new List<GameObject>();
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        if (player == null)
+        {
+            player = FindObjectOfType<PlayerController>();
+        }
+
         foreach (GameObject itemPrefab in itemPrefabs)
         {
             Instantiate(itemPrefab);
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private bool CheckLevelRequirement()
     {
-        
+        Vector3 playerScale = player.transform.localScale;
+
+        if (playerScale.x >= scaleRequirement.x &&
+            playerScale.y >= scaleRequirement.y &&
+            playerScale.z >= scaleRequirement.z)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

@@ -17,10 +17,9 @@ public class CameraController : MonoBehaviour
     private float angleX = 0;
     private float angleY = 0;
 
-    // Start is called before the first frame update
     private void Start()
     {
-        orbitRadius = this.transform.position - target.position;
+        orbitRadius = transform.position - target.position;
         Cursor.lockState = CursorLockMode.Locked;
 
         // if there is no target, try to set the player as target
@@ -39,7 +38,6 @@ public class CameraController : MonoBehaviour
         }
     }
     
-    // Update is called once per frame
     private void Update()
     {
         angleX += Input.GetAxis("Mouse X") * sensitivityX * Time.deltaTime;

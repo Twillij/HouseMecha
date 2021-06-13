@@ -75,12 +75,6 @@ public class PlayerController : MonoBehaviour
 
     private void Turn()
     {
-        //// set the player's y-rotation to be the same as the camera's
-        //Quaternion newRotation = Quaternion.Euler(this.transform.rotation.x, cameraController.transform.eulerAngles.y, this.transform.rotation.z);
-
-        //// execute the rotation smoothly
-        //this.transform.rotation = Quaternion.Slerp(this.transform.rotation, newRotation, turnSpeed * Time.deltaTime);
-
         Vector3 cameraDirection = new Vector3(cameraController.transform.forward.x, 0.0f, cameraController.transform.forward.z);
 
         Quaternion newRotation = Quaternion.LookRotation(cameraDirection, Vector3.up);
@@ -88,15 +82,20 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, turnSpeed * Time.deltaTime); 
     }
 
-    private void AttachItem(GameObject newItem)
+    private bool TryAttachItem(AttachableItem newItem)
     {
         AttachableSlot[] slots = transform.GetComponentsInChildren<AttachableSlot>();
 
         foreach (AttachableSlot slot in slots)
         {
-            if (slot.CanAttach(newItem))
-                slot.Attach(newItem);
+            if (slot.TryAttachItem(newItem))
+            {
+                IncreaseScale(newItem.scaleValue);
+                return true;
+            }
         }
+
+        return false;
     }
 
     private void IncreaseScale(Vector3 addedScale)
@@ -107,14 +106,16 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Move();
+    }
 
-        if (Input.GetKeyDown(interactKey))
+    private void OnTriggerEnter(Collider other)
+    {
+        AttachableItem item = other.GetComponent<AttachableItem>();
+
+        if (item != null)
         {
-            Ray ray = new Ray(transform.position + characterController.center, transform.forward);
-            if (Physics.SphereCast(ray, characterController.radius, out RaycastHit hitInfo, characterController.radius))
-            {
-                AttachItem(hitInfo.transform.gameObject);
-            }
+            if (TryAttachItem(item))
+                item.Despawn();
         }
     }
 }
