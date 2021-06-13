@@ -18,12 +18,14 @@ public class PlayerController : MonoBehaviour
     private CharacterController characterController;
     private Animator animator;
     private Vector3 moveDirection;
+    private Vector3 originalScale;
     private float airVelocity;
 
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        originalScale = transform.localScale;
     }
 
     private void Move()
@@ -100,6 +102,7 @@ public class PlayerController : MonoBehaviour
 
     private void IncreaseScale(Vector3 addedScale)
     {
+        Vector3 oldScale = transform.localScale;
         transform.localScale += addedScale;
     }
 
