@@ -16,12 +16,14 @@ public class PlayerController : MonoBehaviour
     public KeyCode interactKey = KeyCode.Mouse0;
 
     private CharacterController characterController;
+    private Animator animator;
     private Vector3 moveDirection;
-    private float verticalVelocity;
+    private float airVelocity;
 
     private void Start()
     {
         characterController = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
     }
 
     private void Move()
@@ -35,15 +37,20 @@ public class PlayerController : MonoBehaviour
             // reset the vertical velocity to a low negative number
             // this is to ensure that the player is completely grounded
             // if set to 0 then the player might hover slightly in the air, i.e. not grounded
-            if (verticalVelocity < 0.0f)
-                verticalVelocity = -1.0f;
+            if (airVelocity < 0.0f)
+                airVelocity = -1.0f;
 
             // get the local move direction vector
             moveDirection = new Vector3(horizontal, 0.0f, vertical);
             
             if (moveDirection.magnitude > 0.0f)
             {
+                //animator.SetBool("isWalking", true);
                 Turn();
+            }
+            else
+            {
+                //animator.SetBool("isWalking", false);
             }
 
             // transform the local direction into world space
@@ -52,7 +59,7 @@ public class PlayerController : MonoBehaviour
             if (isJumping)
             {
                 // add an upward velocity relative to gravity
-                verticalVelocity += Mathf.Sqrt(jumpPower * -3.0f * gravity);
+                airVelocity += Mathf.Sqrt(jumpPower * -3.0f * gravity);
             }
         }
 
@@ -60,10 +67,10 @@ public class PlayerController : MonoBehaviour
         characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
 
         // apply gravity
-        verticalVelocity += gravity * Time.deltaTime;
+        airVelocity += gravity * Time.deltaTime;
 
         // move the player in the vertical direction
-        characterController.Move(new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime);
+        characterController.Move(new Vector3(0.0f, airVelocity, 0.0f) * Time.deltaTime);
     }
 
     private void Turn()
@@ -72,7 +79,7 @@ public class PlayerController : MonoBehaviour
         Quaternion newRotation = Quaternion.Euler(this.transform.rotation.x, cameraController.transform.eulerAngles.y, this.transform.rotation.z);
 
         // execute the rotation smoothly
-        this.transform.rotation = Quaternion.Slerp(this.transform.rotation, newRotation, turnSpeed * Time.deltaTime);
+        this.transform.rotation = newRotation;// Quaternion.Slerp(this.transform.rotation, newRotation, turnSpeed * Time.deltaTime);
     }
 
     private void AttachItem(GameObject newItem)
