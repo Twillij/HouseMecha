@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        AttachableItem item = other.GetComponent<AttachableItem>();
+        AttachableItem item = other.GetComponent<AttachableItem>(); Debug.Log("Detected: " + other.gameObject.name);
 
         if (item != null)
         {

@@ -8,6 +8,6 @@ public class AttachableItem : MonoBehaviour
 
     public void Despawn()
     {
-        Destroy(this);
+        Destroy(gameObject);
     }
 }
