@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Red
-    second: {fileID: 2100000, guid: 3cca5176c25bfb042a1bb4516fd2c830, type: 2}
+    second: {fileID: 2100000, guid: 29ebc79ee6e826c4e9ae76a678c8f221, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: White
-    second: {fileID: 2100000, guid: 3caa14c7214e99645aec421e043bb55f, type: 2}
+    second: {fileID: 2100000, guid: 67a9275fcd1ad5b43b342f2f42ac1470, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -95,7 +95,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.1
+    globalScale: 0.001
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
