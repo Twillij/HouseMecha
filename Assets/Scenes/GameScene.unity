@@ -5764,6 +5764,12 @@ MonoBehaviour:
   sensitivityY: 500
   minAngleY: -60
   maxAngleY: 60
+  zoomSpeed: 50
+  zoomInClamp: {x: 0, y: 0, z: -1}
+  zoomOutClamp: {x: 0, y: 0, z: -5}
+  zoomLockX: 1
+  zoomLockY: 1
+  zoomLockZ: 0
   target: {fileID: 543450652594889116}
   orbitRadius: {x: 0, y: 0, z: 0}
 --- !u!1001 &1604831479

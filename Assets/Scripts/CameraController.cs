@@ -10,6 +10,12 @@ public class CameraController : MonoBehaviour
     public float sensitivityY = 500;
     public float minAngleY = -60;
     public float maxAngleY = 60;
+    public float zoomSpeed = 100;
+    public Vector3 zoomInClamp = Vector3.zero;
+    public Vector3 zoomOutClamp = Vector3.zero;
+    public bool zoomLockX = true;
+    public bool zoomLockY = true;
+    public bool zoomLockZ = false;
 
     public Transform target;
     public Vector3 orbitRadius;
@@ -37,7 +43,55 @@ public class CameraController : MonoBehaviour
             }
         }
     }
-    
+
+    private void Zoom()
+    {
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+
+        // zoom in
+        if (scroll > 0.0f)
+        {
+            if (!zoomLockX)
+            {
+                orbitRadius.x += zoomSpeed * Time.deltaTime;
+                orbitRadius.x = Mathf.Min(orbitRadius.x, zoomInClamp.x);
+            }
+
+            if (!zoomLockY)
+            {
+                orbitRadius.y += zoomSpeed * Time.deltaTime;
+                orbitRadius.y = Mathf.Min(orbitRadius.y, zoomInClamp.y);
+            }
+
+            if (!zoomLockZ)
+            {
+                orbitRadius.z += zoomSpeed * Time.deltaTime;
+                orbitRadius.z = Mathf.Min(orbitRadius.z, zoomInClamp.z);
+            }
+        }
+        // zoom out
+        else if (scroll < 0.0f)
+        {
+            if (!zoomLockX)
+            {
+                orbitRadius.x -= zoomSpeed * Time.deltaTime;
+                orbitRadius.x = Mathf.Max(orbitRadius.x, zoomOutClamp.x);
+            }
+
+            if (!zoomLockY)
+            {
+                orbitRadius.y -= zoomSpeed * Time.deltaTime;
+                orbitRadius.y = Mathf.Max(orbitRadius.y, zoomOutClamp.y);
+            }
+
+            if (!zoomLockZ)
+            {
+                orbitRadius.z -= zoomSpeed * Time.deltaTime;
+                orbitRadius.z = Mathf.Max(orbitRadius.z, zoomOutClamp.z);
+            }
+        }
+    }
+
     private void Update()
     {
         angleX += Input.GetAxis("Mouse X") * sensitivityX * Time.deltaTime;
@@ -52,5 +106,7 @@ public class CameraController : MonoBehaviour
 
         // rotate the camera to refocus
         transform.rotation = rotation;
+
+        Zoom();
     }
 }
