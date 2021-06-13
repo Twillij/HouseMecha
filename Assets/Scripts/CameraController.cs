@@ -18,8 +18,8 @@ public class CameraController : MonoBehaviour
     public bool zoomLockZ = false;
 
     public Transform target;
-    public Vector3 orbitRadius;
 
+    private Vector3 orbitRadius;
     private float angleX = 0;
     private float angleY = 0;
 
